@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:MMASSIST"
+             x:Class="MMASSIST.SchedulePage"
+             Title="SchedulePage">
+
+    <ContentPage.BindingContext>
+        <local:ScheduleViewModel/>
+    </ContentPage.BindingContext>
+
+    <ContentPage.Resources>
+
+        <ControlTemplate x:Key="TimeRulerViewTemplate">
+
+            <VerticalStackLayout BindingContext="{TemplateBinding BindingContext}}"
+                                 BindableLayout.ItemsSource="{Binding TimeRulerItems}"
+                                 Background="Gray">
+                <BindableLayout.ItemTemplate>
+                    <DataTemplate>
+
+                        <VerticalStackLayout>
+                            <Label MinimumHeightRequest="40"
+                                   FontSize="12"
+                                   HorizontalTextAlignment="Center"
+                                   Text="{Binding Text}"
+                                   BackgroundColor="White"
+                                   Margin="0,1,1,0"/>
+                        </VerticalStackLayout>
+
+                    </DataTemplate>
+                </BindableLayout.ItemTemplate>
+            </VerticalStackLayout>
+
+        </ControlTemplate>
+
+
+    </ContentPage.Resources>
+
+    <Grid RowDefinitions="Auto,*">
+
+        <Label Grid.Column="0"
+               Grid.Row="0"
+               Text="Header, header, header"
+               HorizontalTextAlignment="Center"
+               FontSize="Title"/>
+
+        <ScrollView Grid.Column="0"
+                    Grid.Row="1">
+
+            <Grid ColumnDefinitions="Auto,*">
+
+                <ContentView Grid.Column="0"
+                             Grid.Row="0"
+                             ControlTemplate="{StaticResource Key=TimeRulerViewTemplate}"/>
+
+                <CollectionView Grid.Column="1"
+                                Grid.Row="0"
+                                BackgroundColor="AliceBlue"
+                                ItemsSource="{Binding Columns}">
+
+                    <CollectionView.ItemsLayout>
+                        <LinearItemsLayout Orientation="Horizontal"
+                                           SnapPointsType="Mandatory"/>
+                    </CollectionView.ItemsLayout>
+
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+
+                            <Border Stroke="Red"
+                                    StrokeThickness="2">
+
+                                <Grid ColumnDefinitions="Auto,800"
+                                        RowDefinitions="40,40,40,40,40,40,40,40,40,40,40,40,40,40,40,40,40,40,40,40,40,40,40,40">
+
+                                    <Label Grid.Column="0"
+								    Grid.Row="0"
+								    Text="00:00"/>
+                                    <Label Grid.Column="0"
+                                    Grid.Row="1"
+                                    Text="01:00"/>
+                                    <Label Grid.Column="0"
+                                    Grid.Row="2"
+                                    Text="02:00"/>
+                                    <Label Grid.Column="0"
+                                    Grid.Row="3"
+                                    Text="03:00"/>
+                                    <Label Grid.Column="0"
+                                    Grid.Row="4"
+                                    Text="04:00"/>
+                                    <Label Grid.Column="0"
+                                    Grid.Row="5"
+                                    Text="05:00"/>
+                                    <Label Grid.Column="0"
+                                    Grid.Row="6"
+                                    Text="06:00"/>
+                                    <Label Grid.Column="0"
+                                    Grid.Row="7"
+                                    Text="07:00"/>
+                                    <Label Grid.Column="0"
+                                    Grid.Row="8"
+                                    Text="08:00"/>
+                                    <Label Grid.Column="0"
+                                    Grid.Row="9"
+                                    Text="09:00"/>
+                                    <Label Grid.Column="0"
+                                    Grid.Row="10"
+                                    Text="10:00"/>
+                                    <Label Grid.Column="0"
+                                    Grid.Row="11"
+                                    Text="11:00"/>
+                                    <Label Grid.Column="0"
+                                    Grid.Row="12"
+                                    Text="12:00"/>
+                                    <Label Grid.Column="0"
+                                    Grid.Row="13"
+                                    Text="13:00"/>
+                                    <Label Grid.Column="0"
+                                    Grid.Row="14"
+                                    Text="14:00"/>
+                                    <Label Grid.Column="0"
+                                    Grid.Row="15"
+                                    Text="15:00"/>
+                                    <Label Grid.Column="0"
+                                    Grid.Row="16"
+                                    Text="16:00"/>
+                                    <Label Grid.Column="0"
+                                    Grid.Row="17"
+                                    Text="17:00"/>
+                                    <Label Grid.Column="0"
+                                    Grid.Row="18"
+                                    Text="18:00"/>
+                                    <Label Grid.Column="0"
+                                    Grid.Row="19"
+                                    Text="19:00"/>
+                                    <Label Grid.Column="0"
+                                    Grid.Row="20"
+                                    Text="20:00"/>
+                                    <Label Grid.Column="0"
+                                    Grid.Row="21"
+                                    Text="21:00"/>
+                                    <Label Grid.Column="0"
+                                    Grid.Row="22"
+                                    Text="22:00"/>
+                                    <Label Grid.Column="0"
+                                    Grid.Row="23"
+                                    Text="23:00"/>
+
+                                    <Label Grid.Column="1"
+                                            Grid.Row="0"
+                                            Grid.RowSpan="24"
+                                        Text="{Binding Name}"
+                                        FontAttributes="Bold"
+                                        FontSize="20"
+                                        HorizontalOptions="End"
+                                        VerticalOptions="Center" />
+
+                                </Grid>
+
+                            </Border>
+
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+
+                </CollectionView>
+
+            </Grid>
+
+        </ScrollView>
+
+    </Grid>
+
+</ContentPage>

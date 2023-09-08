@@ -1,0 +1,63 @@
+﻿.NET Multi-platform App UI (.NET MAUI)
+	<https://github.com/dotnet/maui>
+
+.NET MAUI Samples
+	<https://learn.microsoft.com/en-us/samples/browse/?filter-products=maui&products=dotnet-maui>
+	<https://github.com/dotnet/maui-samples>
+
+Enterprise Application Patterns Using .NET MAUI (a book)
+	<https://learn.microsoft.com/en-us/dotnet/architecture/maui/>
+
+Getting Started with DevOps and .NET MAUI
+	<https://devblogs.microsoft.com/dotnet/devops-for-dotnet-maui/>
+
+Introducing .NET MAUI – One Codebase, Many Platforms
+	<https://devblogs.microsoft.com/dotnet/introducing-dotnet-maui-one-codebase-many-platforms/
+
+Creating a .NET MAUI Maps Control
+	<https://www.cayas.de/de/blog/dotnet-maui-custom-map-handler>
+
+New Resources to Get Started with .NET MAUI
+	<https://devblogs.microsoft.com/dotnet/learn-dotnet-maui/<
+
+Customizing Controls in .NET MAUI
+	<https://devblogs.microsoft.com/dotnet/customizing-dotnet-maui-controls/>
+
+Announcing the .NET MAUI Beautiful UI Challenge
+	<https://devblogs.microsoft.com/dotnet/announcing-dotnet-maui-beautiful-ui-challenge/>
+
+---
+
+Marku extensions in XAML attributes:
+	<https://github.com/dotnet/maui/blob/e36d222ecf830f8e92b09e435db3e0f98e58bd5c/src/Controls/src/Xaml/MarkupExtensionParser.cs#L17>
+
+---
+
+Bugs & Fixes
+
+CollectionView Header & Footer not showing #14557
+	<https://github.com/dotnet/maui/issues/14557>
+
+---
+
+        <!--<GraphicsView Grid.Column="0"
+                              Grid.Row="0"
+                              Grid.ColumnSpan="{Binding Source={RelativeSource AncestorType={Type Grid}}, Path=ColumnDefinitions.Count}"
+                              Grid.RowSpan="{Binding Source={RelativeSource AncestorType={Type Grid}}, Path=RowDefinitions.Count}"
+                              Drawable="{StaticResource scheduleDrawable}"/>-->
+
+        <!--<Grid.GestureRecognizers>
+                    <TapGestureRecognizer Buttons="Primary,Secondary"
+                                          NumberOfTapsRequired="1"
+                                          Tapped="TapGestureRecognizer_Tapped"/>
+                    <SwipeGestureRecognizer Direction="Left,Right"
+                                            Swiped="SwipeGestureRecognizer_Swiped"/>
+                    <PointerGestureRecognizer PointerEntered="PointerGestureRecognizer_PointerEntered"
+                                          PointerExited="PointerGestureRecognizer_PointerExited"
+                                          PointerMoved="PointerGestureRecognizer_PointerMoved"/>
+                    <PanGestureRecognizer PanUpdated="PanGestureRecognizer_PanUpdated"/>
+                </Grid.GestureRecognizers>-->
+
+                <GraphicsView Grid.Column="0"
+                              Grid.Row="0"
+                              Drawable="{StaticResource m_timeRulerDrawable}"/>
